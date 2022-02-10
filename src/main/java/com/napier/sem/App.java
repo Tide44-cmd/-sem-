@@ -87,7 +87,7 @@ public class App {
         try {
             Statement s = con.createStatement();
 
-            String select = "SELECT emp_no, first_name, last_name "
+            String select = "SELECT * "
                     + "FROM employees "
                     + "WHERE emp_no = " + ID;
 
@@ -98,6 +98,7 @@ public class App {
                 emp.emp_no = rset.getInt("emp_no");
                 emp.first_name = rset.getString("first_name");
                 emp.last_name = rset.getString("last_name");
+                emp.title = rset.getString("title");
                 return emp;
             } else {
                 return null;
